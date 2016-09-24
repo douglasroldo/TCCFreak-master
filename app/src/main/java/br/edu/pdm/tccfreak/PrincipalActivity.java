@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.security.Principal;
 
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -23,11 +26,12 @@ public class PrincipalActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabFrequencia);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabFrequencia);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast toast = Toast.makeText(PrincipalActivity.this,"Você Selecionou a Frequencia",Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
 
@@ -89,15 +93,22 @@ public class PrincipalActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.mnAluno) {
+            Toast toast = Toast.makeText(PrincipalActivity.this,"Você Selecionou o menu aluno!",Toast.LENGTH_SHORT);
+            toast.show();
             // Handle the camera action
         } else if (id == R.id.mntrabalho) {
+            Toast toast = Toast.makeText(PrincipalActivity.this,"Você Selecionou o menu Trabalho!",Toast.LENGTH_SHORT);
+            toast.show();
 
         } else if (id == R.id.mnSobre) {
-
+            Toast toast = Toast.makeText(PrincipalActivity.this,"Você Selecionou o menu Sobre!",Toast.LENGTH_SHORT);
+            toast.show();
         } else if (id == R.id.mnsair) {
-
+            Toast toast = Toast.makeText(PrincipalActivity.this,"Você Selecionou o menu Sair!",Toast.LENGTH_SHORT);
+            toast.show();
         } else if (id == R.id.mnSincronizar) {
-
+            Toast toast = Toast.makeText(PrincipalActivity.this,"Você Selecionou o menu Sincronizar!",Toast.LENGTH_SHORT);
+            toast.show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
