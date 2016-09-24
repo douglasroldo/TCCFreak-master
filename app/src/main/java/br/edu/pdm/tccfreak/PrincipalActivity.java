@@ -2,9 +2,8 @@ package br.edu.pdm.tccfreak;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,9 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import java.security.Principal;
 
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,9 +46,11 @@ public class PrincipalActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         String usuario = getIntent().getStringExtra("usuario");
-        Snackbar.make(navigationView, "Seja bem vindo " + usuario,
-                Snackbar.LENGTH_LONG)
-                .show();
+        //Snackbar.make(navigationView, "Seja bem vindo " + usuario,
+          //      Snackbar.LENGTH_LONG)
+         //       .show();
+        TextView txtusuario = (TextView)navigationView.getHeaderView(0).findViewById(R.id.txtusuario);
+        TextView txtemail = (TextView)navigationView.getHeaderView(0).findViewById(R.id.textEmail);
     }
 
 
@@ -107,7 +108,7 @@ public class PrincipalActivity extends AppCompatActivity
             Toast toast = Toast.makeText(PrincipalActivity.this,"Você Selecionou o menu Sair!",Toast.LENGTH_SHORT);
             toast.show();
         } else if (id == R.id.mnSincronizar) {
-            Toast toast = Toast.makeText(PrincipalActivity.this,"Você Selecionou o menu Sincronizar!",Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(PrincipalActivity.this,"Você Selecionou o menu Sincronizar'!",Toast.LENGTH_SHORT);
             toast.show();
         }
 
