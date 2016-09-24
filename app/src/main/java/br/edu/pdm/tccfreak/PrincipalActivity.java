@@ -23,14 +23,16 @@ public class PrincipalActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabFrequencia);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
             }
         });
+
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,7 +42,13 @@ public class PrincipalActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        String usuario = getIntent().getStringExtra("usuario");
+        Snackbar.make(navigationView, "Seja bem vindo " + usuario,
+                Snackbar.LENGTH_LONG)
+                .show();
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -67,7 +75,7 @@ public class PrincipalActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.mnConfiguracoes) {
             return true;
         }
 
@@ -80,17 +88,15 @@ public class PrincipalActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.mnAluno) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.mntrabalho) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.mnSobre) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.mnsair) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.mnSincronizar) {
 
         }
 

@@ -39,8 +39,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 // recuperar valores da tela
                 String strLogin = edtLogin.getText().toString();
                 String strSenha = edtSenha.getText().toString();
-                if (strLogin.trim().equals("tccfreak") && strSenha.trim().equals("tccfreak")) {
+                if (strLogin.trim().equals("tccfreak") &&
+                        strSenha.trim().equals("tccfreak")) {
                     Intent it = new Intent(this, PrincipalActivity.class);
+                    it.putExtra("usuario", "TccFreak");
                     startActivity(it);
                     finish();
                 } else {
